@@ -25,18 +25,19 @@ class Frame extends JFrame{
 
 class Panel extends JPanel{
 
-    Snake snake;
+    static Snake snake;
+    Tile tile;
     PaintSnake paintSnake;
 
     public Panel(){
         setLayout(new BorderLayout());
         setFocusable(true);
 
-        snake = new Snake();
         paintSnake = new PaintSnake();
+        snake = new Snake();
 
         add(paintSnake);
-        paintSnake.addSnake(snake);
+
         addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -58,10 +59,11 @@ class Panel extends JPanel{
                     snake.setLastKey(e.getKeyCode());
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_L){
-                    paintSnake.addOtherSnake(snake);
+                    paintSnake.addTile();
                 }
-
-
+                else if(e.getKeyCode() == KeyEvent.VK_K){
+                    paintSnake.addOtherTile();
+                }
             }
 
             @Override
@@ -73,6 +75,5 @@ class Panel extends JPanel{
         Runnable r = new RunnableSnake(snake, paintSnake);
         Thread t = new Thread(r);
         t.start();
-
     }
 }

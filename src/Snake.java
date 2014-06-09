@@ -6,10 +6,12 @@ import java.awt.geom.Ellipse2D;
  * Created by Gregory on 22.05.2014.
  */
 public class Snake {
+
     public final static int SNAKE_SIZE = 25;
-    private int x;
-    private int y;
-    private int lastKey;
+
+    private int x = 100;
+    private int y = 100;
+    static int lastKey;
 
     public void setLastKey(int lastKey){ this.lastKey = lastKey; }
 
@@ -62,6 +64,4 @@ public class Snake {
     public Shape addSnake(){
             return new Ellipse2D.Double(x, y, SNAKE_SIZE, SNAKE_SIZE);
     }
-
-    public Shape addBodyOfSnake(){ return new Ellipse2D.Double(x, y,  SNAKE_SIZE, SNAKE_SIZE); }
 }

@@ -14,7 +14,6 @@ public class PaintSnake extends JPanel {
         tile.add(new Tile((int) tile.get(tile.size() - 1).getX(), (int) tile.get(tile.size() - 1).getY()));
     }
 
-
     public static int getTileX(int i){
         return (int) tile.get(i).getX();
     }
@@ -35,8 +34,10 @@ public class PaintSnake extends JPanel {
 
         Graphics2D g2 = (Graphics2D) g;
 
+        g2.setColor(Color.GREEN);
         g2.fill(Panel.snake.addSnake());
 
+        g2.setColor(Color.BLACK);
         for(Tile t : tile){
             g2.fill(t.addSnake());
         }

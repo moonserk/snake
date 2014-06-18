@@ -2,9 +2,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Ellipse2D;
 
-/**
- * Created by Gregory on 22.05.2014.
- */
 public class Snake {
 
     public final static int SNAKE_SIZE = 25;

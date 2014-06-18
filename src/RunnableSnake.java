@@ -19,11 +19,17 @@ public class RunnableSnake implements Runnable {
             for(;;) {
                 snake.bounds();
                 snake.movements();
+
                 for(Tile t : PaintSnake.tile){
                     t.grow();
                 }
+
+                if(snake.getX() == PaintSnake.food.getX() && snake.getY() == PaintSnake.food.getY()){
+                    PaintSnake.food.Move();
+                    PaintSnake.addTile();
+                }
+
                 component.repaint();
-                System.out.println(Panel.snake.getX() + "  " + Panel.snake.getY());
                 Thread.sleep(400);
             }
 

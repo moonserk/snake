@@ -10,9 +10,7 @@ public class Tile extends Snake{
     private int xMemory;
     private int yMemory;
 
-    public Tile(int x, int y){
-        setX(x);
-        setY(y);
+    public Tile(){
         n = numb;
         numb++;
     }
@@ -22,17 +20,17 @@ public class Tile extends Snake{
             xMemory = (int) getX();
             yMemory = (int) getY();
             if (Snake.lastKey == KeyEvent.VK_DOWN) {
-                setY(PaintSnake.getSnakeY() - SNAKE_SIZE);
-                setX(PaintSnake.getSnakeX());
+                setY((int)Panel.snake.getY() - SNAKE_SIZE);
+                setX((int)Panel.snake.getX());
             } else if (Snake.lastKey == KeyEvent.VK_UP) {
-                setY(PaintSnake.getSnakeY() + SNAKE_SIZE);
-                setX(PaintSnake.getSnakeX());
+                setY((int)Panel.snake.getY() + SNAKE_SIZE);
+                setX((int)Panel.snake.getX());
             } else if (Snake.lastKey == KeyEvent.VK_LEFT) {
-                setX(PaintSnake.getSnakeX() + SNAKE_SIZE);
-                setY(PaintSnake.getSnakeY());
+                setX((int)Panel.snake.getX() + SNAKE_SIZE);
+                setY((int)Panel.snake.getY());
             } else if (Snake.lastKey == KeyEvent.VK_RIGHT) {
-                setX(PaintSnake.getSnakeX() - SNAKE_SIZE);
-                setY(PaintSnake.getSnakeY());
+                setX((int)Panel.snake.getX() - SNAKE_SIZE);
+                setY((int)Panel.snake.getY());
             }
         }
         else if(PaintSnake.tile.isEmpty() == false){

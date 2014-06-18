@@ -26,7 +26,6 @@ class Frame extends JFrame{
 class Panel extends JPanel{
 
     static Snake snake;
-    Tile tile;
     PaintSnake paintSnake;
 
     public Panel(){
@@ -57,12 +56,6 @@ class Panel extends JPanel{
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_LEFT){
                     snake.setLastKey(e.getKeyCode());
-                }
-                else if(e.getKeyCode() == KeyEvent.VK_L){
-                    paintSnake.addTile();
-                }
-                else if(e.getKeyCode() == KeyEvent.VK_K){
-                    paintSnake.addOtherTile();
                 }
             }
 

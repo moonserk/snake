@@ -8,7 +8,9 @@ public class Snake {
 
     private int x = 100;
     private int y = 100;
+    static int key = 0;
     static int lastKey;
+
 
     public void setLastKey(int lastKey){ this.lastKey = lastKey; }
 
@@ -44,17 +46,40 @@ public class Snake {
     }
 
     public void movements(){
-        if(lastKey == KeyEvent.VK_DOWN){
+        if(lastKey == KeyEvent.VK_DOWN && key != 2){
             y += SNAKE_SIZE;
+            key = 1;
         }
-        else if(lastKey == KeyEvent.VK_UP){
+        else if(lastKey == KeyEvent.VK_DOWN && key == 2){
             y -= SNAKE_SIZE;
+            key = 2;
         }
-        else if(lastKey == KeyEvent.VK_LEFT){
+
+        if(lastKey == KeyEvent.VK_UP && key != 1){
+            y -= SNAKE_SIZE;
+            key = 2;
+        }
+        else if(lastKey == KeyEvent.VK_UP && key == 1){
+            y += SNAKE_SIZE;
+            key = 1;
+        }
+
+        if(lastKey == KeyEvent.VK_LEFT && key != 4){
             x -= SNAKE_SIZE;
+            key = 3;
         }
-        else if(lastKey == KeyEvent.VK_RIGHT){
+        else if(lastKey == KeyEvent.VK_LEFT && key == 4){
             x += SNAKE_SIZE;
+            key = 4;
+        }
+
+        if(lastKey == KeyEvent.VK_RIGHT && key != 3){
+            x += SNAKE_SIZE;
+            key = 4;
+        }
+        else if(lastKey == KeyEvent.VK_RIGHT && key == 3){
+            x -= SNAKE_SIZE;
+            key = 3;
         }
     }
 

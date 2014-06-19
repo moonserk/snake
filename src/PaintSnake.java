@@ -25,7 +25,6 @@ public class PaintSnake extends JPanel {
         }
 
         g2.setColor(Color.RED);
-
         g2.fill(food.getFood());
 
     }

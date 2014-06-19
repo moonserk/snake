@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class Food {
 
-    private int x;
-    private int y;
+    private int x = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
+    private int y = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
 
     public int getX() {
         return x;
@@ -19,14 +19,8 @@ public class Food {
     }
 
     public void Move(){
-        int x = (int) Math.floor(Math.abs(Math.random() * 425));
-        int y = (int) Math.floor(Math.abs(Math.random() * 425));
-        x /= Snake.SNAKE_SIZE;
-        y /= Snake.SNAKE_SIZE;
-        x *= Snake.SNAKE_SIZE;
-        y *= Snake.SNAKE_SIZE;
-        this.x = x;
-        this.y = y;
+        this.x = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;;
+        this.y = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;;
     }
 
     public Shape getFood(){

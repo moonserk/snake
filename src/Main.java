@@ -15,7 +15,7 @@ public class Main {
 class Frame extends JFrame{
 
     public Frame(){
-        setSize(415, 435);
+        setSize(440, 463);
         setTitle("Snake");
 
         Panel panel = new Panel();

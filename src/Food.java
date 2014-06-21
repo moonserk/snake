@@ -7,8 +7,18 @@ import java.util.Random;
  */
 public class Food {
 
+    private static int score = 0;
     private int x = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
     private int y = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
+
+
+    public static int getScore() {
+        return score;
+    }
+
+    public static void setScore(int score) {
+        Food.score = score;
+    }
 
     public int getX() {
         return x;

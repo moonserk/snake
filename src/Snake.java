@@ -6,8 +6,8 @@ public class Snake {
 
     public final static int SNAKE_SIZE = 25;
 
-    private int x = 100;
-    private int y = 100;
+    private int x = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
+    private int y = ((int) Math.abs(Math.random() * 425) / Snake.SNAKE_SIZE) * Snake.SNAKE_SIZE;
     static int key = 0;
     static int lastKey;
 
@@ -31,17 +31,17 @@ public class Snake {
     }
 
     public void bounds(){
-        if(x > 400 ){
-            x = 0;
+        if(x == 400 && lastKey == KeyEvent.VK_RIGHT){
+            x = -25;
         }
-        else if(x < 0){
-            x =400;
+        else if(x == 0 && lastKey == KeyEvent.VK_LEFT){
+            x = 425;
         }
-        else if(y > 400){
-            y = 0;
+        else if(y == 400 && lastKey == KeyEvent.VK_DOWN){
+            y = -25;
         }
-        else if(y < 0){
-            y = 400;
+        else if(y == 0 && lastKey == KeyEvent.VK_UP){
+            y = 425;
         }
     }
 
